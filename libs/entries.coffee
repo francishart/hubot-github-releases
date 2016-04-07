@@ -3,7 +3,7 @@
 module.exports = class Entries
 
   constructor: (@robot) ->
-    @prefix = 'hubot-rss-reader:entry:'
+    @prefix = 'hubot-github-releases:entry:'
 
   key: (url) ->
     "#{@prefix}#{url}"

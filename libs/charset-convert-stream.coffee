@@ -5,7 +5,7 @@
 
 stream = require 'stream'
 Iconv  = require('iconv').Iconv
-debug  = require('debug')('hubot-rss-reader:charset-convert-stream')
+debug  = require('debug')('hubot-github-releases:charset-convert-stream')
 
 module.exports = ->
 
@@ -28,4 +28,3 @@ module.exports = ->
     next()
 
   return charsetConvertStream
-
