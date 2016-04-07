@@ -1,12 +1,12 @@
 # Description:
-#   Hubot RSS Reader
+#   Hubot Github Releases Notifier
 #
 # Commands:
-#   hubot rss add https://github.com/shokai.atom
-#   hubot rss delete http://shokai.org/blog/feed
-#   hubot rss delete #room_name
-#   hubot rss list
-#   hubot rss dump
+#   hubot gitreleases add https://github.com/shokai.atom
+#   hubot gitreleases delete http://shokai.org/blog/feed
+#   hubot gitreleases delete #room_name
+#   hubot gitreleases list
+#   hubot gitreleases dump
 #
 # Author:
 #   @franciahsrt
