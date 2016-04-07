@@ -96,6 +96,8 @@ module.exports = class RSSChecker extends events.EventEmitter
 
         debug entry
         entries.push entry
+        console.log('entries include:' + @entries.include)
+        console.log('entry url: ' + entry.url)
         unless @entries.include entry.url
           @entries.add entry.url
           @emit 'new entry', entry
