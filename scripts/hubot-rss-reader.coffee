@@ -104,7 +104,7 @@ module.exports = (robot) ->
       if _.includes feeds, err.feed.url
         send {room: room}, "[ERROR] #{err.feed.url} - #{err.error.message or err.error}"
 
-  robot.respond /rss\s+(add|register)\s+(https?:\/\/[^\s]+)$/im, (msg) ->
+  robot.respond /gitreleases\s+(add|register)\s+(https?:\/\/[^\s]+)$/im, (msg) ->
     url = msg.match[2].trim()
     last_state_is_error[url] = false
     logger.info "add #{url}"
@@ -144,7 +144,7 @@ module.exports = (robot) ->
       logger.error err.stack
 
 
-  robot.respond /rss\s+delete\s+(https?:\/\/[^\s]+)$/im, (msg) ->
+  robot.respond /gitreleases\s+delete\s+(https?:\/\/[^\s]+)$/im, (msg) ->
     url = msg.match[1].trim()
     logger.info "delete #{url}"
     checker.deleteFeed(getRoom(msg), url)
@@ -154,7 +154,7 @@ module.exports = (robot) ->
       msg.send err
       logger.error err.stack
 
-  robot.respond /rss\s+delete\s+#([^\s]+)$/im, (msg) ->
+  robot.respond /gitreleases\s+delete\s+#([^\s]+)$/im, (msg) ->
     room = msg.match[1].trim()
     logger.info "delete ##{room}"
     checker.deleteRoom room
@@ -164,13 +164,13 @@ module.exports = (robot) ->
       msg.send err
       logger.error err.stack
 
-  robot.respond /rss\s+list$/i, (msg) ->
+  robot.respond /gitreleases\s+list$/i, (msg) ->
     feeds = checker.getFeeds getRoom(msg)
     if feeds.length < 1
       msg.send "nothing"
     else
       msg.send feeds.join "\n"
 
-  robot.respond /rss dump$/i, (msg) ->
+  robot.respond /gitreleases dump$/i, (msg) ->
     feeds = checker.getAllFeeds()
     msg.send JSON.stringify feeds, null, 2
