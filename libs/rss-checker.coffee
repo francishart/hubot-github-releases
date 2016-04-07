@@ -80,7 +80,7 @@ module.exports = class RSSChecker extends events.EventEmitter
         entry =
           guid: chunk.guid
           url: chunk.link
-          title: entities.decode(chunk.title or '')
+          title: '*' + entities.decode(chunk.title or '').replace("Release notes from ", "") + '*'
           summary: cleanup_summary entities.decode(chunk.summary or chunk.description or '')
           feed:
             url: args.url
