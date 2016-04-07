@@ -76,7 +76,7 @@ module.exports = class RSSChecker extends events.EventEmitter
 
       entries = []
       feedparser.on 'data', (chunk) =>
-        console.log('ONDATA: url: ' + chunk.link);
+        console.log('ONDATA: url: ' + chunk.link)
         entry =
           guid: chunk.guid
           url: chunk.link
@@ -96,8 +96,8 @@ module.exports = class RSSChecker extends events.EventEmitter
             return s
           args: args
 
-        console.log('>>> chunk: ' + JSON.stringify(chunk));
-        console.log('>>> entry: ' + entry);
+        console.log('>>> chunk: ' + JSON.stringify(chunk))
+        console.log('>>> entry: ' + entry)
         debug entry
         entries.push entry
         unless @entries.include entry.guid

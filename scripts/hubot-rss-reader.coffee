@@ -22,7 +22,7 @@ FindRSS    = Promise.promisify require 'find-rss'
 
 ## config
 package_json = require path.join __dirname, '../package.json'
-process.env.HUBOT_RSS_INTERVAL     ||= 60*1  # 1 minutes
+process.env.HUBOT_RSS_INTERVAL     ||= 60*10  # 10 minutes
 process.env.HUBOT_RSS_HEADER       ||= '@channel: :warning: New Release: '
 process.env.HUBOT_RSS_USERAGENT    ||= "hubot-github-releases/#{package_json.version}"
 process.env.HUBOT_RSS_PRINTSUMMARY ||= "true"
