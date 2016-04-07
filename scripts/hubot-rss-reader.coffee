@@ -26,10 +26,10 @@ process.env.HUBOT_RSS_INTERVAL     ||= 60*1  # 1 minutes
 process.env.HUBOT_RSS_HEADER       ||= '@channel: :warning: New Release: '
 process.env.HUBOT_RSS_USERAGENT    ||= "hubot-github-releases/#{package_json.version}"
 process.env.HUBOT_RSS_PRINTSUMMARY ||= "true"
-process.env.HUBOT_RSS_PRINTIMAGE   ||= "false"
+process.env.HUBOT_RSS_PRINTIMAGE   ||= "true"
 process.env.HUBOT_RSS_PRINTERROR   ||= "true"
 process.env.HUBOT_RSS_IRCCOLORS    ||= "false"
-process.env.HUBOT_RSS_LIMIT_ON_ADD ||= 5
+process.env.HUBOT_RSS_LIMIT_ON_ADD ||= 0
 
 module.exports = (robot) ->
 
