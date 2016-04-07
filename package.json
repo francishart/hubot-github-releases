@@ -1,27 +1,27 @@
 {
-  "name": "hubot-rss-reader",
+  "name": "hubot-github-releases",
   "private": false,
-  "version": "0.8.3",
-  "description": "Hubot RSS Reader",
+  "version": "0.1.0",
+  "description": "Hubot Github Release Notifier",
   "main": "index.coffee",
   "scripts": {
     "test": "grunt test"
   },
   "keywords": [
     "hubot",
-    "rss",
-    "feed"
+    "github",
+    "release"
   ],
-  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "author": "Francis Hart <francis@francishart.com>",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git://github.com/shokai/hubot-rss-reader.git"
+    "url": "git://github.com/francishart/hubot-github-releases.git"
   },
   "bugs": {
-    "url": "https://github.com/shokai/hubot-rss-reader/issues"
+    "url": "https://github.com/francishart/hubot-github-releases/issues"
   },
-  "homepage": "https://github.com/shokai/hubot-rss-reader",
+  "homepage": "https://github.com/francishart/hubot-github-releases",
   "dependencies": {
     "async": "*",
     "bluebird": "*",

@@ -24,7 +24,7 @@ describe 'RSSChecker', ->
       checker.on 'new entry', (entry) ->
         _entries.push entry
 
-      checker.fetch 'http://shokai.org/blog/feed'
+      checker.fetch 'http://feeds.bbci.co.uk/news/rss.xml?edition=uk'
       .then (entries) ->
         assert.ok entries instanceof Array
         for entry in entries
@@ -45,7 +45,7 @@ describe 'RSSChecker', ->
       checker.on 'new entry', (entry) ->
         assert.ok false
 
-      checker.fetch 'http://shokai.org/blog/feed'
+      checker.fetch 'http://feeds.bbci.co.uk/news/rss.xml?edition=uk'
       .then (entries) ->
         new Promise (resolve, reject) ->
           setTimeout ->
@@ -69,6 +69,6 @@ describe 'RSSChecker', ->
 
       checker.check
         feeds: [
-          'http://shokai.org/blog/feed'
-          'https://github.com/shokai.atom'
+          'http://feeds.bbci.co.uk/news/rss.xml?edition=uk'
+          'https://github.com/francishart.atom'
         ]

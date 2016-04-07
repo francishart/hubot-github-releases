@@ -9,13 +9,13 @@
 #   hubot rss dump
 #
 # Author:
-#   @shokai
+#   @franciahsrt
 
 'use strict'
 
 path       = require 'path'
 _          = require 'lodash'
-debug      = require('debug')('hubot-rss-reader')
+debug      = require('debug')('hubot-github-releases')
 Promise    = require 'bluebird'
 RSSChecker = require path.join __dirname, '../libs/rss-checker'
 FindRSS    = Promise.promisify require 'find-rss'
@@ -23,10 +23,10 @@ FindRSS    = Promise.promisify require 'find-rss'
 ## config
 package_json = require path.join __dirname, '../package.json'
 process.env.HUBOT_RSS_INTERVAL     ||= 60*10  # 10 minutes
-process.env.HUBOT_RSS_HEADER       ||= ':sushi:'
-process.env.HUBOT_RSS_USERAGENT    ||= "hubot-rss-reader/#{package_json.version}"
+process.env.HUBOT_RSS_HEADER       ||= 'New Release: '
+process.env.HUBOT_RSS_USERAGENT    ||= "hubot-github-releases/#{package_json.version}"
 process.env.HUBOT_RSS_PRINTSUMMARY ||= "true"
-process.env.HUBOT_RSS_PRINTIMAGE   ||= "true"
+process.env.HUBOT_RSS_PRINTIMAGE   ||= "false"
 process.env.HUBOT_RSS_PRINTERROR   ||= "true"
 process.env.HUBOT_RSS_IRCCOLORS    ||= "false"
 process.env.HUBOT_RSS_LIMIT_ON_ADD ||= 5
@@ -116,17 +116,17 @@ module.exports = (robot) ->
         resolve url
     .then (url) ->
       checker.fetch {url: url, room: room}
-    .then (entries) ->
-      entry_limit =
-        if process.env.HUBOT_RSS_LIMIT_ON_ADD is 'false'
-          entries.length
-        else
-          process.env.HUBOT_RSS_LIMIT_ON_ADD - 0
-      for entry in entries.splice 0, entry_limit
-        send {room: room}, entry.toString()
-      if entries.length > 0
-        send {room: room},
-        "#{process.env.HUBOT_RSS_HEADER} #{entries.length} entries has been omitted"
+    # .then (entries) ->
+    #   entry_limit =
+    #     if process.env.HUBOT_RSS_LIMIT_ON_ADD is 'false'
+    #       entries.length
+    #     else
+    #       process.env.HUBOT_RSS_LIMIT_ON_ADD - 0
+    #   for entry in entries.splice 0, entry_limit
+    #     send {room: room}, entry.toString()
+    #   if entries.length > 0
+    #     send {room: room},
+    #     "#{process.env.HUBOT_RSS_HEADER} #{entries.length} entries has been omitted"
     , (err) ->
       msg.send "[ERROR] #{err}"
       return if err.message isnt 'Not a feed'
