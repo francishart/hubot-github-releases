@@ -106,6 +106,7 @@ module.exports = class RSSChecker extends events.EventEmitter
   check: (opts = {}) ->
     new Promise (resolve) =>
       debug "start checking all feeds"
+      console.log("start checking all feeds")
       feeds = []
       for room, _feeds of (opts.feeds or @robot.brain.get('feeds'))
         feeds = feeds.concat _feeds
