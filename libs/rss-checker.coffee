@@ -95,6 +95,7 @@ module.exports = class RSSChecker extends events.EventEmitter
             return s
           args: args
 
+        console.log('>>> chunk: ' + chunk);
         console.log('>>> entry: ' + entry);
         debug entry
         entries.push entry
