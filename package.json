@@ -1,0 +1,51 @@
+{
+  "name": "hubot-rss-reader",
+  "private": false,
+  "version": "0.8.3",
+  "description": "Hubot RSS Reader",
+  "main": "index.coffee",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "keywords": [
+    "hubot",
+    "rss",
+    "feed"
+  ],
+  "author": "Sho Hashimoto <hashimoto@shokai.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/shokai/hubot-rss-reader.git"
+  },
+  "bugs": {
+    "url": "https://github.com/shokai/hubot-rss-reader/issues"
+  },
+  "homepage": "https://github.com/shokai/hubot-rss-reader",
+  "dependencies": {
+    "async": "*",
+    "bluebird": "*",
+    "cheerio": "*",
+    "debug": "*",
+    "feedparser": "*",
+    "find-rss": "*",
+    "html-entities": "*",
+    "iconv": "*",
+    "irc-colors": "^1.1.1",
+    "lodash": "*",
+    "request": "*"
+  },
+  "devDependencies": {
+    "coffee-errors": "*",
+    "coffee-script": "^1.10",
+    "coffeelint": "^1.13",
+    "grunt": "*",
+    "grunt-cli": "*",
+    "grunt-coffeelint": "*",
+    "grunt-contrib-watch": "*",
+    "grunt-notify": "*",
+    "grunt-simple-mocha": "*",
+    "hubot-scripts": "*",
+    "mocha": "*"
+  }
+}
