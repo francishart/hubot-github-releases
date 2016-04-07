@@ -43,14 +43,16 @@ Usage
 
 ### add
 
-    hubot gitreleases add https://github.com/francishart.atom
+Add a Github repo by adding `/releases.atom` to the end of the URL.
+
+    hubot gitreleases add https://github.com/francishart/hubot-github-releases
     # or
-    hubot gitreleases register https://github.com/francishart.atom
+    hubot gitreleases register https://github.com/francishart/hubot-github-releases
 
 
 ### delete
 
-    hubot gitreleases delete https://github.com/francishart.atom
+    hubot gitreleases delete https://github.com/francishart/hubot-github-releases
     hubot gitreleases delete #room_name
 
 ### list
