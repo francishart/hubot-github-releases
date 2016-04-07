@@ -5,14 +5,14 @@ module.exports = class Entries
   constructor: (@robot) ->
     @prefix = 'hubot-github-releases:entry:'
 
-  key: (url) ->
-    "#{@prefix}#{url}"
+  key: (guid) ->
+    "#{@prefix}#{guid}"
 
-  add: (url) ->
-    @robot.brain.set @key(url), true
+  add: (guid) ->
+    @robot.brain.set @key(guid), true
 
-  remove: (url) ->
-    @robot.brain.set @key(url), false
+  remove: (guid) ->
+    @robot.brain.set @key(guid), false
 
-  include: (url) ->
-    @robot.brain.get @key(url)
+  include: (guid) ->
+    @robot.brain.get @key(guid)
