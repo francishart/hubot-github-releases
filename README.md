@@ -16,17 +16,17 @@ Requirements
 - hubot-brain
   - recommend [hubot-mongodb-brain](http://npmjs.com/package/hubot-mongodb-brain).
 
-Install
+<!-- Install
 -------
 
     % npm install hubot-github-releases -save
     % npm install coffee-script@">=1.10.0" -save
 
-### edit `external-script.json`
-
+### edit `external-script.json` -->
+<!-- 
 ```json
 ["hubot-github-releases"]
-```
+``` -->
 
 ### Configure (ENV vars)
 
