@@ -2,7 +2,7 @@ Hubot Github Releases
 ================
 Notifier for Github Release, works with Hubot, based on hubot-rss-reader.
 
-[![Circle CI](https://circleci.com/gh/github.com/francishart/hubot-github-releases.svg?style=svg)](https://circleci.com/gh/github.com/francishart/hubot-github-releases)
+[![Circle CI](https://circleci.com/gh/francishart/hubot-github-releases.svg?style=svg)](https://circleci.com/gh/francishart/hubot-github-releases)
 
 - https://github.com/github.com/francishart/hubot-github-releases
 - https://www.npmjs.org/package/hubot-github-releases
