@@ -76,7 +76,7 @@ module.exports = class RSSChecker extends events.EventEmitter
 
       entries = []
       feedparser.on 'data', (chunk) =>
-      console.log('ONDATA: url: ' + chunk.link);
+        console.log('ONDATA: url: ' + chunk.link);
         entry =
           url: chunk.link
           title: entities.decode(chunk.title or '')
