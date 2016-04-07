@@ -76,7 +76,6 @@ module.exports = class RSSChecker extends events.EventEmitter
 
       entries = []
       feedparser.on 'data', (chunk) =>
-        console.log('ONDATA: url: ' + chunk.link)
         entry =
           guid: chunk.guid
           url: chunk.link
@@ -96,14 +95,11 @@ module.exports = class RSSChecker extends events.EventEmitter
             return s
           args: args
 
-        console.log('>>> chunk: ' + JSON.stringify(chunk))
-        console.log('>>> entry: ' + entry)
         debug entry
         entries.push entry
         unless @entries.include entry.guid
           @entries.add entry.guid
           @emit 'new entry', entry
-          console.log('Emitting new entry: ' + entry)
 
       feedparser.on 'end', ->
         resolve entries
@@ -111,7 +107,6 @@ module.exports = class RSSChecker extends events.EventEmitter
   check: (opts = {}) ->
     new Promise (resolve) =>
       debug "start checking all feeds"
-      console.log("start checking all feeds")
       feeds = []
       for room, _feeds of (opts.feeds or @robot.brain.get('feeds'))
         feeds = feeds.concat _feeds
