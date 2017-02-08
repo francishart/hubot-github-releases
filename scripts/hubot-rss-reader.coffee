@@ -100,9 +100,9 @@ module.exports = (robot) ->
     if last_state_is_error[err.feed.url]  # reduce error notify
       return
     last_state_is_error[err.feed.url] = true
-    for room, feeds of checker.getAllFeeds()
-      if _.includes feeds, err.feed.url
-        # send {room: room}, "[ERROR] #{err.feed.url} - #{err.error.message or err.error}"
+    #for room, feeds of checker.getAllFeeds()
+    #  if _.includes feeds, err.feed.url
+    #    send {room: room}, "[ERROR] #{err.feed.url} - #{err.error.message or err.error}"
 
   robot.respond /gitreleases\s+(add|register)\s+(https?:\/\/[^\s]+)$/im, (msg) ->
     url = msg.match[2].trim()
